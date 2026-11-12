@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tecnologia, Inovação e Soluções Digitais</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07111f;--bg2:#0b1a30;--card:#0f2240;--line:#1c3a66;--blue:#1d6bff;--cyan:#19e3ff;--tx:#e6f0ff;--mut:#93a9c9;--ok:#2fe3a0}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:9;background:rgba(7,17,31,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+nav b{font-family:Sora;color:var(--cyan)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav ul a{color:var(--mut)}nav ul a:hover{color:var(--tx)}
+#mb{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:6px 12px;font-size:18px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font:500 15px Inter;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:#3a80ff}
+.btn.o{background:transparent;border-color:var(--cyan);color:var(--cyan)}
+.btn.s{padding:8px 14px;font-size:14px}
+.hero{position:relative;overflow:hidden;padding:90px 0 80px;background:radial-gradient(900px 400px at 80% 0,#0f3a8a55,transparent),var(--bg)}
+.hero svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.hero svg path{stroke:var(--cyan);fill:none;stroke-width:1.2;stroke-dasharray:6 520;animation:fl 7s linear infinite}
+.hero svg path:nth-child(2){animation-delay:-2.5s}.hero svg path:nth-child(3){animation-delay:-5s}
+@keyframes fl{to{stroke-dashoffset:-1052}}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(30px,5.5vw,56px);max-width:15em}
+.hero p{color:var(--mut);max-width:40em;margin:18px 0 28px;font-size:18px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+section{padding:70px 0}
+section.alt{background:var(--bg2)}
+.sh{margin-bottom:30px}.sh h2{font-size:clamp(24px,3.5vw,34px)}.sh p{color:var(--mut);margin-top:8px;max-width:44em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card .ic{font-size:26px}.card h3{font-size:17px}.card p{color:var(--mut);font-size:14.5px;flex:1}
+.note{border-left:3px solid var(--cyan);background:#0d2b4a;padding:12px 16px;border-radius:0 10px 10px 0;color:var(--mut);margin-top:22px;font-size:14.5px}
+.gamer{background:linear-gradient(135deg,#1a0f3a,#07111f 70%);border:1px solid #4b2f9a;border-radius:16px;padding:28px}
+.gamer .card{background:#150d33;border-color:#3b2680}
+.hl{font-family:Sora;font-size:clamp(20px,3vw,28px);color:var(--cyan);margin:26px 0 16px}
+.pdv{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.phone{width:230px;height:440px;margin:auto;border:8px solid #243b63;border-radius:34px;background:var(--card);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mut);padding:20px;font-size:14px;box-shadow:0 0 50px #1d6bff33}
+.fl{list-style:none;padding:0;display:grid;gap:8px;margin:18px 0}
+.fl li{display:flex;gap:10px;align-items:center}
+.on{color:var(--ok)}.off{color:var(--mut)}
+.off small{border:1px solid var(--line);border-radius:6px;padding:0 6px;font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{border:1px solid var(--line);background:none;color:var(--mut);border-radius:20px;padding:6px 14px;cursor:pointer;font:14px Inter}
+.chip.a{border-color:var(--cyan);color:var(--cyan)}
+.ph{border-style:dashed;align-items:center;justify-content:center;text-align:center;min-height:150px;color:var(--mut)}
+.st{font-size:12px;border-radius:6px;padding:2px 8px;align-self:flex-start;background:#0d2b4a;color:var(--cyan)}
+form{display:grid;gap:14px;max-width:640px}
+label{display:grid;gap:6px;font-size:14.5px;color:var(--mut)}
+input,select,textarea{background:var(--bg);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:11px;font:16px Inter;width:100%}
+.big{background:linear-gradient(120deg,#0f3a8a,#0b6b8a);border-radius:16px;padding:36px;margin-bottom:34px}
+.big h2{font-size:clamp(22px,3.5vw,32px)}.big p{margin:12px 0 22px;max-width:46em}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
+.shots{display:flex;gap:12px;justify-content:center;align-items:flex-start}
+.mob{width:31%;max-width:190px;border:5px solid #243b63;border-radius:22px;box-shadow:0 0 40px #1d6bff33}
+.main img{width:100%;border:1px solid var(--line);border-radius:12px;box-shadow:0 0 40px #1d6bff33}
+.thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+@media(max-width:800px){#mb{display:block}nav ul{display:none;position:absolute;top:62px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line)}nav ul.open{display:flex}.pdv{grid-template-columns:1fr}section{padding:50px 0}}
+@media(prefers-reduced-motion:reduce){.hero svg path{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<b>&lt;/&gt; Tecnologia</b>
+<button id="mb" aria-label="Abrir menu">☰</button>
+<ul id="menu">
+<li><a href="index.html">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#pdv">Mercadex e PDV</a></li><li><a href="#impressao3d">Impressão 3D</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#sob-encomenda">Sob encomenda</a></li><li><a href="#orcamento">Orçamento</a></li>
+</ul></nav></div></header>
+
+<div class="hero">
+<svg viewBox="0 0 1100 500" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120H300L340 160H620L660 120H1100"/><path d="M0 300H200L240 340H520L560 380H1100"/><path d="M0 440H400L440 400H800L840 440H1100"/></svg>
+<div class="wrap">
+<h1>Tecnologia, inovação e soluções digitais</h1>
+<p>Transformamos ideias em soluções tecnológicas. Oferecemos suporte técnico, desenvolvimento de sistemas, aplicativos e serviços especializados para facilitar seu dia a dia e impulsionar seus negócios.</p>
+<div class="row"><a class="btn" href="#servicos">Conheça nossos serviços</a><a class="btn o" href="#projetos">Conheça nossos projetos</a><a class="btn o" data-wa="Olá! Gostaria de solicitar atendimento." href="#">Solicitar atendimento</a></div>
+</div></div>
+
+<section id="servicos"><div class="wrap">
+<div class="sh"><h2>Serviços</h2><p>Escolha uma categoria. Cada serviço abre uma conversa no WhatsApp com a mensagem já preenchida.</p></div>
+<div id="svc"></div>
+</div></section>
+
+<section class="alt" id="games"><div class="wrap"><div class="gamer">
+<div class="sh"><h2>🎮 Videogames e consoles</h2></div>
+<div class="grid" id="gm"></div>
+<div class="note">Não anunciamos nem realizamos serviços que violem direitos autorais ou mecanismos de segurança de terceiros. Desbloqueios só quando tecnicamente e legalmente permitidos.</div>
+</div></div></section>
+
+<section id="pdv"><div class="wrap">
+<div class="sh"><h2>Seu mercado na palma da mão!</h2><p>Aplicativos próprios desenvolvidos para facilitar o gerenciamento de vendas e produtos, trazendo mais praticidade e organização para estabelecimentos comerciais.</p></div>
+<div class="pdv">
+<div><h3 class="hl" style="margin-top:0">Mercadex: compras inteligentes</h3>
+<p style="color:var(--mut)">Aplicativo de pedidos para mercados de bairro: o cliente busca produtos, monta o carrinho e faz o pedido pelo celular, no estilo dos apps de delivery. Pode ser sincronizado com o Meu Sistema (PDV), se você quiser.</p>
+<ul class="fl" id="feat2"></ul>
+<div class="row"><a class="btn" data-wa="Olá! Gostaria de conhecer o aplicativo Mercadex." href="#">Quero conhecer o Mercadex</a><a class="btn o" data-wa="Olá! Gostaria de solicitar uma demonstração do Mercadex." href="#">Solicitar demonstração</a></div></div>
+<div class="shots" id="sh2"></div>
+</div>
+<div class="pdv" style="margin-top:70px">
+<div><div class="main" id="mainpc"></div><div class="thumbs" id="thpc"></div></div>
+<div><h3 class="hl" style="margin-top:0">Meu Sistema: gestão e PDV</h3>
+<p style="color:var(--mut)">Sistema de gestão e ponto de venda para o caixa e a retaguarda do comércio, com cadastro de produtos, estoque, vendas e relatórios.</p>
+<ul class="fl" id="feat1"></ul>
+<div class="row"><a class="btn" data-wa="Olá! Gostaria de conhecer o sistema Meu Sistema (PDV)." href="#">Quero conhecer o sistema</a><a class="btn o" data-wa="Olá! Tenho interesse em utilizar o Meu Sistema (PDV)." href="#">Tenho interesse em utilizar</a></div></div>
+</div>
+<h3 class="hl">Teste grátis e planos</h3>
+<div class="grid">
+<div class="card"><div class="ic">🎁</div><h3>Teste grátis por 7 dias</h3><p>Experimente antes de decidir.</p><a class="btn s" data-wa="Olá! Quero iniciar o teste grátis de 7 dias." href="#">Quero testar</a></div>
+<div class="card"><div class="ic">📆</div><h3>Plano mensal</h3><p>Mensalidade sem fidelidade longa. Valores sob consulta.</p><a class="btn s o" data-wa="Olá! Gostaria de saber sobre o plano mensal." href="#">Consultar plano</a></div>
+<div class="card"><div class="ic">🗓️</div><h3>Plano anual</h3><p>Licença anual. Valores sob consulta.</p><a class="btn s o" data-wa="Olá! Gostaria de saber sobre o plano anual." href="#">Consultar plano</a></div>
+</div>
+<div class="note">O Mercadex e o Meu Sistema funcionam separados ou sincronizados. Para informações de compra, entre em contato pelo WhatsApp.</div>
+</div></section>
+
+<section class="alt" id="impressao3d"><div class="wrap">
+<div class="sh"><h2>Arquivos e modelos para impressão 3D</h2><p>Arquivos STL e OBJ, projetos personalizados e modelos sob encomenda, quando disponível. Downloads só de arquivos autorizados.</p></div>
+<div class="grid" id="m3d"></div>
+</div></section>
+
+<section id="projetos"><div class="wrap">
+<div class="sh"><h2>Projetos e tecnologias</h2><p>Aplicativos, sistemas e protótipos desenvolvidos por aqui.</p></div>
+<div class="chips" id="chips"></div><div class="grid" id="prj"></div>
+</div></section>
+
+<section class="alt" id="sob-encomenda"><div class="wrap">
+<div class="big"><h2>Tem uma ideia? Nós podemos transformá-la em um projeto!</h2>
+<p>Precisa de um aplicativo, sistema, jogo, site ou alguma solução tecnológica específica? Trabalhamos também com desenvolvimento personalizado. Apresente sua ideia e vamos avaliar a melhor maneira de torná-la realidade.</p>
+<div class="row"><a class="btn" data-wa="Olá! Tenho uma ideia para desenvolver." href="#">Tenho uma ideia para desenvolver</a><a class="btn o" href="#pform">Quero solicitar um projeto personalizado</a><a class="btn o" data-wa="Olá! Gostaria de conversar com um desenvolvedor." href="#">Conversar com um desenvolvedor</a></div></div>
+<div class="sh"><h2>Projetos sob encomenda</h2><p>Você pode propor algo que não está listado aqui.</p></div>
+<div class="grid" id="cust"></div>
+<div class="note">Nenhum projeto tem preço ou prazo garantido antes de uma avaliação técnica. Cada pedido é analisado conforme complexidade, prazo e viabilidade.</div>
+<h3 class="hl" id="pform">Formulário de projeto personalizado</h3>
+<form id="f2">
+<label>Nome<input name="n" required></label>
+<label>Tipo de projeto<select name="t" id="tp"></select></label>
+<label>Descrição da ideia<textarea name="d" rows="3" required></textarea></label>
+<label>Funcionalidades desejadas<textarea name="f" rows="3"></textarea></label>
+<label>Prazo pretendido<input name="p" placeholder="Ex.: 2 meses"></label>
+<label>Informações adicionais<textarea name="i" rows="2"></textarea></label>
+<button class="btn" type="submit">Enviar pelo WhatsApp</button>
+</form>
+<p style="margin-top:26px;font-size:18px">Não importa se você precisa de algo simples ou de um projeto mais elaborado. Estamos abertos a novos desafios e ideias. Entre em contato e conte o que você precisa!</p>
+</div></section>
+
+<section id="orcamento"><div class="wrap">
+<div class="sh"><h2>Solicitar orçamento</h2></div>
+<form id="f1">
+<label>Nome<input name="n" required></label>
+<label>Serviço desejado<select name="s" id="sv"></select></label>
+<label>Descreva sua necessidade<textarea name="d" rows="4" required></textarea></label>
+<button class="btn" type="submit">Enviar pelo WhatsApp</button>
+</form>
+</div></section>
+
+<footer><div class="wrap"><p><a href="index.html" style="text-decoration:underline">← Voltar ao site Matos Barreto (loja, serviços e JMatos Construções)</a></p><br>Tecnologia e Soluções Digitais · WhatsApp <a id="tel" href="#"></a><br>Trabalhamos somente com sistemas, licenças e softwares autorizados. Faça backup dos seus dados antes de qualquer procedimento que possa apagá-los.</div></footer>
+
+<script>
+/* ===== EDITE AQUI: todo o conteúdo da área fica neste bloco ===== */
+const WA="5512982089411", WA_TXT="(12) 98208-9411"; // WhatsApp exclusivo da área de tecnologia (não é o da loja)
+const SERVICES=[
+ {cat:"Assistência técnica",ic:"🖥️",items:[
+  ["Formatação de computadores","Reinstalação limpa do sistema para deixar o PC como novo.","Olá! Gostaria de solicitar uma formatação de computador."],
+  ["Instalação de sistemas operacionais","Windows ou Linux com licença autorizada.","Olá! Gostaria de instalar um sistema operacional."],
+  ["Instalação e configuração de programas","Programas instalados e prontos para uso.","Olá! Preciso instalar e configurar programas."],
+  ["Configuração de computadores","Configuração inicial completa.","Olá! Gostaria de configurar um computador."],
+  ["Otimização de desempenho","Mais velocidade no dia a dia.","Olá! Meu computador está lento e gostaria de otimizá-lo."],
+  ["Diagnóstico de problemas","Identificamos a causa antes de qualquer reparo.","Olá! Gostaria de um diagnóstico de problemas no meu equipamento."],
+  ["Manutenção de software","Atualizações e correções de sistema e programas.","Olá! Preciso de manutenção de software."],
+  ["Instalação de drivers","Drivers corretos para cada peça.","Olá! Preciso instalar drivers."],
+  ["Configuração de equipamentos","Impressoras, redes e periféricos.","Olá! Gostaria de configurar um equipamento."],
+  ["Suporte técnico","Ajuda para resolver o seu problema.","Olá! Preciso de suporte técnico."]]},
+ {cat:"Sistemas operacionais e software",ic:"💿",note:"Faça backup antes de qualquer procedimento que possa apagar dados. Só trabalhamos com sistemas, licenças e softwares autorizados.",items:[
+  ["Instalação de Windows","Instalação e configuração inicial.","Olá! Gostaria de instalar o Windows."],
+  ["Distribuições Linux","Instalação e configuração de Linux.","Olá! Gostaria de instalar Linux."],
+  ["Preparação de computadores","Atualizações, drivers e programas.","Olá! Gostaria de preparar um computador."],
+  ["Backup e recuperação de arquivos","Quando tecnicamente possível.","Olá! Preciso de backup ou recuperação de arquivos."]]},
+ {cat:"Desenvolvimento de sites",ic:"🌐",hl:"Sua empresa merece uma presença profissional na internet.",cta:["Solicitar meu site","Olá! Tenho interesse em desenvolver um site para minha empresa."],items:[
+  ["Sites institucionais e comerciais","Apresente sua empresa com profissionalismo.","Olá! Tenho interesse em um site institucional/comercial."],
+  ["Landing pages","Páginas focadas em conversão.","Olá! Tenho interesse em uma landing page."],
+  ["Sites para lojas e catálogos digitais","Mostre seus produtos online.","Olá! Tenho interesse em um site/catálogo para minha loja."],
+  ["Sistemas com painel administrativo","Você atualiza o conteúdo sozinho.","Olá! Tenho interesse em um site com painel administrativo."],
+  ["Integração com WhatsApp","Clientes chegam direto na sua conversa.","Olá! Quero integrar meu site ao WhatsApp."],
+  ["Sites responsivos","Funcionam no celular e no computador.","Olá! Quero um site responsivo."],
+  ["Atualização e manutenção de sites","Mantemos seu site em dia.","Olá! Preciso de manutenção no meu site."]]},
+ {cat:"Aplicativos e sistemas",ic:"📱",note:"Também desenvolvemos projetos próprios.",items:[
+  ["Aplicativos","Desenvolvimento de aplicativos.","Olá! Tenho interesse em desenvolver um aplicativo."],
+  ["Sistemas comerciais e de vendas","Controle de vendas e operação.","Olá! Tenho interesse em um sistema comercial/de vendas."],
+  ["Sistemas de gerenciamento e estoque","Organização de produtos e estoque.","Olá! Tenho interesse em um sistema de gerenciamento/estoque."],
+  ["Aplicações web e soluções sob medida","Feitas para a sua necessidade.","Olá! Tenho interesse em uma solução digital sob medida."]]}
+];
+const GAMES=[
+ ["Desbloqueio de videogames","Somente quando técnica e legalmente permitido.","Olá! Gostaria de saber sobre desbloqueio de videogame."],
+ ["Configuração de consoles","Deixe o console pronto para jogar.","Olá! Gostaria de configurar meu console."],
+ ["Instalação e configuração de sistemas","Sistemas e atualizações.","Olá! Preciso instalar/configurar sistema no meu console."],
+ ["Diagnóstico de problemas","Descubra o que está errado.","Olá! Meu console está com problema e gostaria de um diagnóstico."],
+ ["Suporte técnico para consoles","Ajuda especializada.","Olá! Preciso de suporte técnico para console."],
+ ["Orientações e manutenção de software","Atualizações e orientações.","Olá! Preciso de manutenção de software no meu console."]];
+// Marque on:true somente nos recursos que JÁ estão implementados (conferido pelas capturas de tela enviadas).
+const FEAT_PDV=[
+ {n:"Cadastro de produtos, com importação e exportação CSV",on:true},{n:"Organização por categorias",on:true},{n:"Controle de preços, custo e margem",on:true},
+ {n:"PDV com código de barras, descontos e vendas em espera",on:true},{n:"Controle de estoque e estoque mínimo",on:true},{n:"Orçamentos, clientes, convênios e fornecedores",on:true},
+ {n:"Compras, promoções e devoluções",on:true},{n:"Caixa e financeiro",on:true},{n:"Relatórios e curva ABC",on:true},
+ {n:"Impressão de etiquetas",on:true},{n:"Usuários, auditoria e backup",on:true}];
+const FEAT_MDX=[
+ {n:"Cadastro e login de clientes",on:true},{n:"Busca de produtos",on:true},{n:"Categorias e promoções",on:true},
+ {n:"Carrinho de compras",on:true},{n:"Pedidos e perfil do cliente",on:true},{n:"Sincronização com o Meu Sistema (opcional)",on:false}];
+const IMG_MDX=[{src:"img/mercadex-inicio.jpg",alt:"Tela inicial do Mercadex"},{src:"img/mercadex-busca.jpg",alt:"Busca de produtos no Mercadex"},{src:"img/mercadex-login.jpg",alt:"Login e criação de conta no Mercadex"}];
+const IMG_PDV=[{src:"img/pdv-vendas.jpg",alt:"PDV: ponto de venda"},{src:"img/pdv-dashboard.jpg",alt:"Painel (dashboard)"},{src:"img/pdv-produtos.jpg",alt:"Cadastro de produtos"},{src:"img/pdv-login.jpg",alt:"Tela de login"}];
+// Modelos 3D: {img:"", nome:"", desc:"", formato:"STL", cat:"", arquivo:"" (download autorizado, opcional)}
+const MODELS=[];
+// Projetos: {img:"", nome:"", desc:"", tech:"", status:"Em desenvolvimento|Em testes|Disponível|Projeto experimental", funcs:"", cat:"", link:""}
+const PROJECTS=[];
+const PCATS=["Aplicativos próprios","Sistemas comerciais","Desenvolvimento web","Projetos de hardware","Automação","Inteligência artificial","Arduino e ESP32","Impressão 3D","Outros"];
+const CUSTOM=["Jogos digitais","Jogos para PC","Jogos para dispositivos móveis","Experiências interativas","Sistemas personalizados","Aplicativos sob encomenda","Plataformas web","Automação de processos","Arduino e ESP32","Hardware e software","Inteligência artificial e visão computacional","Ferramentas e programas personalizados","Integração entre sistemas","Soluções para empresas","Protótipos e projetos experimentais"];
+/* ================================================================ */
+const $=s=>document.querySelector(s), E=t=>t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const wa=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+const svcCard=(i,ic)=>`<div class="card"><div class="ic">${ic}</div><h3>${E(i[0])}</h3><p>${E(i[1])}</p><a class="btn s" target="_blank" rel="noopener" href="${wa(i[2])}">Solicitar orçamento</a></div>`;
+$("#svc").innerHTML=SERVICES.map(c=>`<h3 class="hl">${c.cat}</h3>${c.hl?`<p style="font-size:18px;margin-bottom:14px"><b>${c.hl}</b></p>`:""}<div class="grid">${c.items.map(i=>svcCard(i,c.ic)).join("")}</div>${c.note?`<div class="note">${c.note}</div>`:""}${c.cta?`<p style="margin-top:16px"><a class="btn" target="_blank" rel="noopener" href="${wa(c.cta[1])}">${c.cta[0]}</a></p>`:""}`).join("");
+$("#gm").innerHTML=GAMES.map(i=>svcCard(i,"🕹️")).join("");
+const fl=(a)=>a.map(f=>f.on?`<li class="on">✔ ${E(f.n)}</li>`:`<li class="off">○ ${E(f.n)} <small>em breve</small></li>`).join("");
+$("#feat1").innerHTML=fl(FEAT_PDV);$("#feat2").innerHTML=fl(FEAT_MDX);
+$("#sh2").innerHTML=IMG_MDX.map(i=>`<img class="mob" src="${i.src}" alt="${E(i.alt)}">`).join("");
+function pc(n){$("#mainpc").innerHTML=`<img src="${IMG_PDV[n].src}" alt="${E(IMG_PDV[n].alt)}">`;}
+$("#thpc").innerHTML=IMG_PDV.map((i,n)=>`<button class="chip" data-n="${n}">${E(i.alt)}</button>`).join("");
+$("#thpc").onclick=e=>{if(e.target.dataset.n)pc(+e.target.dataset.n)};pc(0);
+$("#m3d").innerHTML=(MODELS.length?MODELS.map(m=>`<div class="card">${m.img?`<img src="${E(m.img)}" alt="${E(m.nome)}" style="width:100%;border-radius:8px">`:""}<h3>${E(m.nome)}</h3><p>${E(m.desc)}</p><span class="st">${E(m.formato)} · ${E(m.cat)}</span>${m.arquivo?`<a class="btn s" href="${E(m.arquivo)}" download>Baixar arquivo</a>`:""}<a class="btn s o" target="_blank" rel="noopener" href="${wa("Olá! Gostaria de saber mais sobre o arquivo 3D: "+m.nome)}">Consultar este modelo</a></div>`).join(""):`<div class="card ph">Espaço reservado para os modelos 3D (imagem, nome, descrição, formato e categoria).</div>`)+`<div class="card"><div class="ic">🧊</div><h3>Peça seu arquivo</h3><p>Modelos STL/OBJ, bibliotecas de modelos e projetos sob encomenda.</p><a class="btn s" target="_blank" rel="noopener" href="${wa("Olá! Gostaria de saber mais sobre os arquivos para impressão 3D.")}">Consultar arquivos</a></div>`;
+let cur="Todos";
+function drawP(){
+ $("#chips").innerHTML=["Todos",...PCATS].map(c=>`<button class="chip ${c==cur?"a":""}" data-c="${c}">${c}</button>`).join("");
+ const l=PROJECTS.filter(p=>cur=="Todos"||p.cat==cur);
+ $("#prj").innerHTML=l.length?l.map(p=>`<div class="card">${p.img?`<img src="${E(p.img)}" alt="${E(p.nome)}" style="width:100%;border-radius:8px">`:""}<span class="st">${E(p.status)}</span><h3>${E(p.nome)}</h3><p>${E(p.desc)}</p><p><small>${E(p.tech||"")}</small></p><a class="btn s o" target="_blank" rel="noopener" href="${p.link?E(p.link):wa("Olá! Gostaria de saber mais sobre o projeto "+p.nome)}">Conhecer mais</a></div>`).join(""):`<div class="card ph">Nenhum projeto cadastrado nesta categoria ainda. Adicione em PROJECTS (nome, imagem, descrição, tecnologias, status, funcionalidades).</div>`;
+}
+$("#chips").onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;drawP()}};drawP();
+$("#cust").innerHTML=CUSTOM.map(c=>`<div class="card" style="padding:14px"><h3 style="font-size:15px">${c}</h3></div>`).join("");
+$("#tp").innerHTML=[...CUSTOM,"Outro tipo de projeto"].map(c=>`<option>${c}</option>`).join("");
+$("#sv").innerHTML=[...SERVICES.flatMap(c=>c.items.map(i=>i[0])),...GAMES.map(i=>"Videogames: "+i[0]),"Mercadex (aplicativo)","Meu Sistema (PDV)","Arquivos para impressão 3D","Outro"].map(c=>`<option>${E(c)}</option>`).join("");
+$("#f1").onsubmit=e=>{e.preventDefault();const f=e.target;window.open(wa(`Olá! Sou ${f.n.value}. Gostaria de solicitar orçamento: ${f.s.value}.\nNecessidade: ${f.d.value}`),"_blank")};
+$("#f2").onsubmit=e=>{e.preventDefault();const f=e.target;window.open(wa(`Olá! Sou ${f.n.value}. Gostaria de solicitar um projeto personalizado.\nTipo: ${f.t.value}\nIdeia: ${f.d.value}\nFuncionalidades: ${f.f.value||"-"}\nPrazo pretendido: ${f.p.value||"-"}\nInformações adicionais: ${f.i.value||"-"}`),"_blank")};
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+$("#tel").textContent=WA_TXT;$("#tel").href=wa("Olá! Gostaria de atendimento em tecnologia.");
+$("#mb").onclick=()=>$("#menu").classList.toggle("open");
+$("#menu").onclick=()=>$("#menu").classList.remove("open");
+</script>
+</body>
+</html>
