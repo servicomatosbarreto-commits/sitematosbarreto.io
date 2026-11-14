@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tecnologia, Inovação e Soluções Digitais</title>
+<title>Tecnologia, Inovação e Soluções Digitais | Comercial Matos Barreto</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#07111f;--bg2:#0b1a30;--card:#0f2240;--line:#1c3a66;--blue:#1d6bff;--cyan:#19e3ff;--tx:#e6f0ff;--mut:#93a9c9;--ok:#2fe3a0}
@@ -16,11 +18,33 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:0;z-index:9;background:rgba(7,17,31,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-nav b{font-family:Sora;color:var(--cyan)}
+nav b{font-family:Sora,system-ui,sans-serif;color:var(--cyan)}
+[hidden]{display:none!important}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease var(--d,0ms),transform .6s ease var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+.btn{position:relative;overflow:hidden}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff88,transparent);transform:skewX(-20deg);transition:left .55s}
+.btn:hover:after{left:130%}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+@keyframes shim{to{background-position:200% 0}}
+@keyframes fl2{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.back{display:flex;align-items:center;gap:10px;min-height:44px}
+.pill{background:#fff;border-radius:10px;padding:4px 10px;display:flex;align-items:center;min-height:44px}
+.pill img{height:32px;width:auto;display:block}
+.bt{color:var(--cyan);font-size:15px}
+.tl{display:none}
+nav ul a{white-space:nowrap}
+.hero h1{text-shadow:0 0 30px #19e3ff44}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#19e3ff,#7aa8ff,#19e3ff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 4s linear infinite}
+.card{transition:box-shadow .25s,border-color .25s,translate .25s}
+.card:hover{border-color:var(--cyan);box-shadow:0 0 26px #19e3ff33;translate:0 -4px}
+@media(max-width:1000px){.bt{display:none}}
+@media(prefers-reduced-motion:reduce){.hero h1 em{animation:none;color:var(--cyan);background:none}}
+
 nav ul{display:flex;gap:22px;list-style:none;padding:0}
 nav ul a{color:var(--mut)}nav ul a:hover{color:var(--tx)}
 #mb{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:6px 12px;font-size:18px}
-.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font:500 15px Inter;transition:transform .15s,background .15s}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font:500 15px Inter,system-ui,sans-serif;transition:transform .15s,background .15s}
 .btn:hover{transform:translateY(-2px);background:#3a80ff}
 .btn.o{background:transparent;border-color:var(--cyan);color:var(--cyan)}
 .btn.s{padding:8px 14px;font-size:14px}
@@ -42,7 +66,7 @@ section.alt{background:var(--bg2)}
 .note{border-left:3px solid var(--cyan);background:#0d2b4a;padding:12px 16px;border-radius:0 10px 10px 0;color:var(--mut);margin-top:22px;font-size:14.5px}
 .gamer{background:linear-gradient(135deg,#1a0f3a,#07111f 70%);border:1px solid #4b2f9a;border-radius:16px;padding:28px}
 .gamer .card{background:#150d33;border-color:#3b2680}
-.hl{font-family:Sora;font-size:clamp(20px,3vw,28px);color:var(--cyan);margin:26px 0 16px}
+.hl{font-family:Sora,system-ui,sans-serif;font-size:clamp(20px,3vw,28px);color:var(--cyan);margin:26px 0 16px}
 .pdv{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .phone{width:230px;height:440px;margin:auto;border:8px solid #243b63;border-radius:34px;background:var(--card);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mut);padding:20px;font-size:14px;box-shadow:0 0 50px #1d6bff33}
 .fl{list-style:none;padding:0;display:grid;gap:8px;margin:18px 0}
@@ -50,13 +74,13 @@ section.alt{background:var(--bg2)}
 .on{color:var(--ok)}.off{color:var(--mut)}
 .off small{border:1px solid var(--line);border-radius:6px;padding:0 6px;font-size:12px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.chip{border:1px solid var(--line);background:none;color:var(--mut);border-radius:20px;padding:6px 14px;cursor:pointer;font:14px Inter}
+.chip{border:1px solid var(--line);background:none;color:var(--mut);border-radius:20px;padding:6px 14px;cursor:pointer;font:14px Inter,system-ui,sans-serif}
 .chip.a{border-color:var(--cyan);color:var(--cyan)}
 .ph{border-style:dashed;align-items:center;justify-content:center;text-align:center;min-height:150px;color:var(--mut)}
 .st{font-size:12px;border-radius:6px;padding:2px 8px;align-self:flex-start;background:#0d2b4a;color:var(--cyan)}
 form{display:grid;gap:14px;max-width:640px}
 label{display:grid;gap:6px;font-size:14.5px;color:var(--mut)}
-input,select,textarea{background:var(--bg);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:11px;font:16px Inter;width:100%}
+input,select,textarea{background:var(--bg);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:11px;font:16px Inter,system-ui,sans-serif;width:100%}
 .big{background:linear-gradient(120deg,#0f3a8a,#0b6b8a);border-radius:16px;padding:36px;margin-bottom:34px}
 .big h2{font-size:clamp(22px,3.5vw,32px)}.big p{margin:12px 0 22px;max-width:46em}
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
@@ -70,18 +94,18 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 </head>
 <body>
 <header><div class="wrap"><nav>
-<b>&lt;/&gt; Tecnologia</b>
+<a class="back" href="index.html"><span class="pill"><img src="img/logo-claro.png" alt="Comercial Matos Barreto, voltar ao site" width="82" height="32"></span><span class="bt">← Voltar ao site</span></a><b class="tl">&lt;/&gt; Tecnologia</b>
 <button id="mb" aria-label="Abrir menu">☰</button>
 <ul id="menu">
-<li><a href="index.html">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#pdv">Mercadex e PDV</a></li><li><a href="#impressao3d">Impressão 3D</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#sob-encomenda">Sob encomenda</a></li><li><a href="#orcamento">Orçamento</a></li>
+<li><a href="#servicos">Serviços</a></li><li><a href="#pdv">Mercadex e PDV</a></li><li><a href="#impressao3d">Impressão 3D</a></li><li id="navprj" hidden><a href="#projetos">Projetos</a></li><li><a href="#sob-encomenda">Sob encomenda</a></li><li><a href="#orcamento">Orçamento</a></li>
 </ul></nav></div></header>
 
 <div class="hero">
 <svg viewBox="0 0 1100 500" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120H300L340 160H620L660 120H1100"/><path d="M0 300H200L240 340H520L560 380H1100"/><path d="M0 440H400L440 400H800L840 440H1100"/></svg>
 <div class="wrap">
-<h1>Tecnologia, inovação e soluções digitais</h1>
+<h1>Tecnologia, inovação e <em>soluções digitais</em></h1>
 <p>Transformamos ideias em soluções tecnológicas. Oferecemos suporte técnico, desenvolvimento de sistemas, aplicativos e serviços especializados para facilitar seu dia a dia e impulsionar seus negócios.</p>
-<div class="row"><a class="btn" href="#servicos">Conheça nossos serviços</a><a class="btn o" href="#projetos">Conheça nossos projetos</a><a class="btn o" data-wa="Olá! Gostaria de solicitar atendimento." href="#">Solicitar atendimento</a></div>
+<div class="row"><a class="btn" href="#servicos">Conheça nossos serviços</a><a class="btn o" href="#pdv">Conheça nossos aplicativos</a><a class="btn o" data-wa="Olá! Gostaria de solicitar atendimento." href="#">Solicitar atendimento</a></div>
 </div></div>
 
 <section id="servicos"><div class="wrap">
@@ -125,7 +149,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 <div class="grid" id="m3d"></div>
 </div></section>
 
-<section id="projetos"><div class="wrap">
+<section id="projetos" hidden><div class="wrap">
 <div class="sh"><h2>Projetos e tecnologias</h2><p>Aplicativos, sistemas e protótipos desenvolvidos por aqui.</p></div>
 <div class="chips" id="chips"></div><div class="grid" id="prj"></div>
 </div></section>
@@ -151,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 </div></section>
 
 <section id="orcamento"><div class="wrap">
-<div class="sh"><h2>Solicitar orçamento</h2></div>
+<div class="sh"><h2>Solicitar orçamento</h2><p>Atendimento por mensagem no WhatsApp a qualquer horário.</p></div>
 <form id="f1">
 <label>Nome<input name="n" required></label>
 <label>Serviço desejado<select name="s" id="sv"></select></label>
@@ -160,7 +184,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 </form>
 </div></section>
 
-<footer><div class="wrap"><p><a href="index.html" style="text-decoration:underline">← Voltar ao site Matos Barreto (loja, serviços e JMatos Construções)</a></p><br>Tecnologia e Soluções Digitais · WhatsApp <a id="tel" href="#"></a><br>Trabalhamos somente com sistemas, licenças e softwares autorizados. Faça backup dos seus dados antes de qualquer procedimento que possa apagá-los.</div></footer>
+<footer><div class="wrap"><p>Instagram da loja: <a href="https://www.instagram.com/comercialmatosbarreto_/" target="_blank" rel="noopener" style="text-decoration:underline">@comercialmatosbarreto_</a></p><p><a href="index.html" style="text-decoration:underline">← Voltar ao site Matos Barreto (loja, serviços e JMatos Construções)</a></p><br>Tecnologia e Soluções Digitais · WhatsApp <a id="tel" href="#"></a> · atendimento por mensagem a qualquer horário<br>Trabalhamos somente com sistemas, licenças e softwares autorizados. Faça backup dos seus dados antes de qualquer procedimento que possa apagá-los.</div></footer>
 
 <script>
 /* ===== EDITE AQUI: todo o conteúdo da área fica neste bloco ===== */
@@ -211,7 +235,7 @@ const FEAT_PDV=[
  {n:"Impressão de etiquetas",on:true},{n:"Usuários, auditoria e backup",on:true}];
 const FEAT_MDX=[
  {n:"Cadastro e login de clientes",on:true},{n:"Busca de produtos",on:true},{n:"Categorias e promoções",on:true},
- {n:"Carrinho de compras",on:true},{n:"Pedidos e perfil do cliente",on:true},{n:"Sincronização com o Meu Sistema (opcional)",on:false}];
+ {n:"Carrinho de compras",on:true},{n:"Pedidos e perfil do cliente",on:true},{n:"Sincronização com o Meu Sistema (opcional)",on:true}];
 const IMG_MDX=[{src:"img/mercadex-inicio.jpg",alt:"Tela inicial do Mercadex"},{src:"img/mercadex-busca.jpg",alt:"Busca de produtos no Mercadex"},{src:"img/mercadex-login.jpg",alt:"Login e criação de conta no Mercadex"}];
 const IMG_PDV=[{src:"img/pdv-vendas.jpg",alt:"PDV: ponto de venda"},{src:"img/pdv-dashboard.jpg",alt:"Painel (dashboard)"},{src:"img/pdv-produtos.jpg",alt:"Cadastro de produtos"},{src:"img/pdv-login.jpg",alt:"Tela de login"}];
 // Modelos 3D: {img:"", nome:"", desc:"", formato:"STL", cat:"", arquivo:"" (download autorizado, opcional)}
@@ -232,14 +256,15 @@ $("#sh2").innerHTML=IMG_MDX.map(i=>`<img class="mob" src="${i.src}" alt="${E(i.a
 function pc(n){$("#mainpc").innerHTML=`<img src="${IMG_PDV[n].src}" alt="${E(IMG_PDV[n].alt)}">`;}
 $("#thpc").innerHTML=IMG_PDV.map((i,n)=>`<button class="chip" data-n="${n}">${E(i.alt)}</button>`).join("");
 $("#thpc").onclick=e=>{if(e.target.dataset.n)pc(+e.target.dataset.n)};pc(0);
-$("#m3d").innerHTML=(MODELS.length?MODELS.map(m=>`<div class="card">${m.img?`<img src="${E(m.img)}" alt="${E(m.nome)}" style="width:100%;border-radius:8px">`:""}<h3>${E(m.nome)}</h3><p>${E(m.desc)}</p><span class="st">${E(m.formato)} · ${E(m.cat)}</span>${m.arquivo?`<a class="btn s" href="${E(m.arquivo)}" download>Baixar arquivo</a>`:""}<a class="btn s o" target="_blank" rel="noopener" href="${wa("Olá! Gostaria de saber mais sobre o arquivo 3D: "+m.nome)}">Consultar este modelo</a></div>`).join(""):`<div class="card ph">Espaço reservado para os modelos 3D (imagem, nome, descrição, formato e categoria).</div>`)+`<div class="card"><div class="ic">🧊</div><h3>Peça seu arquivo</h3><p>Modelos STL/OBJ, bibliotecas de modelos e projetos sob encomenda.</p><a class="btn s" target="_blank" rel="noopener" href="${wa("Olá! Gostaria de saber mais sobre os arquivos para impressão 3D.")}">Consultar arquivos</a></div>`;
+$("#m3d").innerHTML=(MODELS.length?MODELS.map(m=>`<div class="card">${m.img?`<img src="${E(m.img)}" alt="${E(m.nome)}" style="width:100%;border-radius:8px">`:""}<h3>${E(m.nome)}</h3><p>${E(m.desc)}</p><span class="st">${E(m.formato)} · ${E(m.cat)}</span>${m.arquivo?`<a class="btn s" href="${E(m.arquivo)}" download>Baixar arquivo</a>`:""}<a class="btn s o" target="_blank" rel="noopener" href="${wa("Olá! Gostaria de saber mais sobre o arquivo 3D: "+m.nome)}">Consultar este modelo</a></div>`).join(""):"")+`<div class="card"><div class="ic">🧊</div><h3>Peça seu arquivo</h3><p>Modelos STL/OBJ, bibliotecas de modelos e projetos sob encomenda.</p><a class="btn s" target="_blank" rel="noopener" href="${wa("Olá! Gostaria de saber mais sobre os arquivos para impressão 3D.")}">Consultar arquivos</a></div>`;
 let cur="Todos";
 function drawP(){
  $("#chips").innerHTML=["Todos",...PCATS].map(c=>`<button class="chip ${c==cur?"a":""}" data-c="${c}">${c}</button>`).join("");
  const l=PROJECTS.filter(p=>cur=="Todos"||p.cat==cur);
- $("#prj").innerHTML=l.length?l.map(p=>`<div class="card">${p.img?`<img src="${E(p.img)}" alt="${E(p.nome)}" style="width:100%;border-radius:8px">`:""}<span class="st">${E(p.status)}</span><h3>${E(p.nome)}</h3><p>${E(p.desc)}</p><p><small>${E(p.tech||"")}</small></p><a class="btn s o" target="_blank" rel="noopener" href="${p.link?E(p.link):wa("Olá! Gostaria de saber mais sobre o projeto "+p.nome)}">Conhecer mais</a></div>`).join(""):`<div class="card ph">Nenhum projeto cadastrado nesta categoria ainda. Adicione em PROJECTS (nome, imagem, descrição, tecnologias, status, funcionalidades).</div>`;
+ $("#prj").innerHTML=l.length?l.map(p=>`<div class="card">${p.img?`<img src="${E(p.img)}" alt="${E(p.nome)}" style="width:100%;border-radius:8px">`:""}<span class="st">${E(p.status)}</span><h3>${E(p.nome)}</h3><p>${E(p.desc)}</p><p><small>${E(p.tech||"")}</small></p><a class="btn s o" target="_blank" rel="noopener" href="${p.link?E(p.link):wa("Olá! Gostaria de saber mais sobre o projeto "+p.nome)}">Conhecer mais</a></div>`).join(""):"";
 }
 $("#chips").onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;drawP()}};drawP();
+if(PROJECTS.length){$("#projetos").hidden=false;$("#navprj").hidden=false}
 $("#cust").innerHTML=CUSTOM.map(c=>`<div class="card" style="padding:14px"><h3 style="font-size:15px">${c}</h3></div>`).join("");
 $("#tp").innerHTML=[...CUSTOM,"Outro tipo de projeto"].map(c=>`<option>${c}</option>`).join("");
 $("#sv").innerHTML=[...SERVICES.flatMap(c=>c.items.map(i=>i[0])),...GAMES.map(i=>"Videogames: "+i[0]),"Mercadex (aplicativo)","Meu Sistema (PDV)","Arquivos para impressão 3D","Outro"].map(c=>`<option>${E(c)}</option>`).join("");
@@ -250,5 +275,7 @@ $("#tel").textContent=WA_TXT;$("#tel").href=wa("Olá! Gostaria de atendimento em
 $("#mb").onclick=()=>$("#menu").classList.toggle("open");
 $("#menu").onclick=()=>$("#menu").classList.remove("open");
 </script>
+<script src="js/fx-common.js" defer></script>
+<script type="module" src="js/fx-tech.js"></script>
 </body>
 </html>
